@@ -6,10 +6,12 @@ function LoginForm(){
 
 
     return (
-        <div>
-
-        Login form
-        </div>
+        <form>
+        <input type="email" required placeholder="email"/>
+        <input type="password" required placeholder="password"/>
+        <div class="error">error</div>
+        <button>Log in</button>
+        </form>
       );
 
 }

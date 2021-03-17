@@ -42,4 +42,60 @@
   4EA32B - another green
   #8EBA23 - green 
 
+
+  // Welcome 
+
+    .welcome {
+    text-align: center;
+    padding: 20px 0;
+  }
+  /* form styles */
+  .welcome form, h2, p {
+    width: 300px;
+    margin: 20px auto;
+    padding: 10px;
+  }
+  .welcome label {
+    display: block;
+    margin: 20px 0 10px;
+  }
+  .welcome input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #eee;
+    outline: none;
+    color: #999;
+    margin: 10px auto;
+  }
+  .welcome span{
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .welcome button {
+    margin: 20px auto;
+  }
+
+  .container {
+    width: 90%;
+    max-width: 760px;
+    margin: 80px auto;
+    border-radius: 20px;
+    box-shadow: 2px 4px 6px rgba(28, 6, 49, 0.1);
+    background: white;
+  }
+  .error {
+    color: #ff3f80;
+    font-size: 14px;
+  }
+  button {
+    text-decoration: none;
+    background: #7CBFB7;
+    color: white;
+    font-weight: bold;
+    border: 0;
+    border-radius: 20px;
+    padding: 10px 20px;
+  }
   
