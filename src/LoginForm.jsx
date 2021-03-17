@@ -2,7 +2,7 @@ import React from 'react';
 
 
 
-function LoginForm(){
+function LoginForm(props){
 
 
     return (
@@ -10,7 +10,9 @@ function LoginForm(){
         <input type="email" required placeholder="email"/>
         <input type="password" required placeholder="password"/>
         <div class="error">error</div>
-        <button>Log in</button>
+        <button onClick={(e) => {
+          e.preventDefault();
+          props.onEnterSupportNinja()}}>Log in</button>
         </form>
       );
 

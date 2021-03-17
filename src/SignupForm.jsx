@@ -2,7 +2,12 @@ import React from 'react';
 
 
 
-function SignupForm(){
+function SignupForm(props){
+
+  const onSignUpSupportNinja = (e) => {
+    e.preventDefault(); 
+    props.onSignUpSupportNinja()
+  }
 
 
     return (
@@ -11,7 +16,7 @@ function SignupForm(){
       <input type="email" required placeholder="email" />
       <input type="password" required placeholder="password" />
       <div class="error"> error </div>
-      <button>Sign up</button>
+      <button onClick = {onSignUpSupportNinja}>Sign up</button>
       </form>
       );
 
