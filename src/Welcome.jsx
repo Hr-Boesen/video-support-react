@@ -2,10 +2,12 @@ import axios from "axios";
 import React, {useState} from "react";
 import LoginForm from './LoginForm'
 import SignupForm from './SignupForm'
+import { useHistory } from "react-router-dom";
 
 
 function App(){
 
+  const history = useHistory();
   const [showLogin, setLogin] = useState(true)
 
 
@@ -20,6 +22,9 @@ function App(){
       user_password: password
     }).then((response)=>{
     console.log(response)
+    
+    history.push("/Home");
+
   })
   }
 
@@ -35,6 +40,7 @@ function App(){
       customer_email: email
     }).then((response)=>{
     console.log(response)
+
   })
 
     
