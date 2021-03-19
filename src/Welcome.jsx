@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, {useState} from "react";
 import LoginForm from './LoginForm'
 import SignupForm from './SignupForm'
@@ -13,19 +14,36 @@ function App(){
     setLogin(!showLogin);
   }
 
-  const enterSupportNinja = () => {
-    alert("Entered Support Ninja")
+  const enterSupportNinja = (email, password) => {
+    axios.post("http://localhost:3001/api/user/login", {
+      user_email: email,
+      user_password: password
+    }).then((response)=>{
+    console.log(response)
+  })
   }
 
 
-  const signUpSupportNinja = () => {
-    alert("Sign Up Support Ninja")
+  const signUpSupportNinja = (company, email, password) => {
+
+    axios.post("http://localhost:3001/api/signUp/post", {
+      user_email: email,
+      user_password: password,
+      customer_name: company,
+      customer_address: null,
+      customer_phone: null,
+      customer_email: email
+    }).then((response)=>{
+    console.log(response)
+  })
+
+    
   }
 
 
 
     return (
-      <div class="welcome container">
+      <div className="welcome container">
         {showLogin === true && <div>
         <div>
           <h2>Login</h2>
