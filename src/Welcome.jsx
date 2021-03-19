@@ -9,6 +9,7 @@ function App(){
 
   const history = useHistory();
   const [showLogin, setLogin] = useState(true)
+  const [error, setError] = useState({})
 
 
   const changeLoginSignUp =() => {
@@ -21,9 +22,17 @@ function App(){
       user_email: email,
       user_password: password
     }).then((response)=>{
-    console.log(response)
+
+    const data =  response.data
+
+    if(data.loggedIn === true){
+       history.push("/Home");
+       console.log("logged in")
+    }else{
+       setError(data)
+    }
     
-    history.push("/Home");
+  
 
   })
   }
@@ -39,7 +48,7 @@ function App(){
       customer_phone: null,
       customer_email: email
     }).then((response)=>{
-    console.log(response)
+   console.log(response)
 
   })
 
@@ -53,7 +62,7 @@ function App(){
         {showLogin === true && <div>
         <div>
           <h2>Login</h2>
-          <LoginForm onEnterSupportNinja = {enterSupportNinja} />
+          <LoginForm onEnterSupportNinja = {enterSupportNinja} error={error} />
           <p>No account yet? <span onClick={changeLoginSignUp}>Signup</span> instead.</p>
         </div> </div>}
         {showLogin === false &&  <div>

@@ -29,7 +29,7 @@ function EnterSupportNinja(e){
         }
         
         />
-        <div className="error"></div>
+        <div className="error">{props.error.message}</div>
         <button onClick = {EnterSupportNinja}>Log in</button>
         </form>
       );
