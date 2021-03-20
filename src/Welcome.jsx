@@ -18,29 +18,28 @@ function App(){
   }
 
   const enterSupportNinja = (email, password) => {
-    axios.post("http://localhost:3001/api/user/login", {
+    axios.post("/api/user/login", {
       user_email: email,
       user_password: password
     }).then((response)=>{
 
-    const data =  response.data
+    const data = response.data
 
     if(data.loggedIn === true){
+      
        history.push("/Home");
        console.log("logged in")
     }else{
        setError(data)
     }
     
-  
-
   })
   }
 
 
   const signUpSupportNinja = (company, email, password) => {
 
-    axios.post("http://localhost:3001/api/signUp/post", {
+    axios.post("/api/signUp/post", {
       user_email: email,
       user_password: password,
       customer_name: company,

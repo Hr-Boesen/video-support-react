@@ -3,8 +3,8 @@ import React, {useState} from 'react';
 function LoginForm(props){
 
 
-const [email, setEmail] = useState("");
-const [password, setPassword] = useState(""); 
+const [email, setEmail] = useState("1@1.dk");
+const [password, setPassword] = useState(1); 
 
 function EnterSupportNinja(e){
   e.preventDefault();
@@ -14,14 +14,14 @@ function EnterSupportNinja(e){
 
     return (
         <form>
-        <input type="email" required placeholder="email"
+        <input type="email" required value= {email} placeholder="email"
         onChange = {
           (e)=>{
             setEmail(e.target.value)
           }
         }
         />
-        <input type="password" required placeholder="password"
+        <input type="password" required value= {password} placeholder="password"
         onChange = {
           (e)=>{
             setPassword(e.target.value)
