@@ -1,40 +1,26 @@
 import axios from "axios";
-import React, {useState} from 'react';
-//import { getTime } from 'date-fns'
+import React, {useState, useEffect} from 'react';
+import SingleSupportCase from './../SingleSupportCase'
 
 
 function Home() {
 
 const [videos, setVideos] = useState([])
 
-
-    const getVideos = () => {
-
+//ComponentDidMount useEffect with empthy array
+     useEffect(() => {
         axios.get("/api/video", {withCredentials:true
         }).then((response)=>{
             
-            setVideos(response.data);
+        setVideos(response.data);
           
-    })
-}
-
- 
-
-
-
-getVideos();
-
+     })
+    },[])
 
     return( 
         <div>
-        <h1> Home </h1>
         {videos.map((video, index) => 
-            <div key={index}>
-            <h3 >{video.timestamp}</h3>
-            <video width="160" height="120" controls>
-            <source src={"http://" + video.video_url}/>
-            </video>
-            </div>
+            <SingleSupportCase key= {index} video={video}/>
            )} 
         </div>
     )

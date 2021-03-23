@@ -11,18 +11,36 @@
     padding: 0 16px;
   }
   
-  header {
+
+  .flex-container-header{
+    display: flex;
+    flex-wrap: nowrap;
     background-color: #7CBFB7;
     margin: auto -16px;
     padding: 16px 32px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
   }
   
-  header h1 {
+  .flex-container-header .logo{
+    color: #fff;
+    font-family: "McLaren", cursive;
+    font-weight: 400;
+    font-size: x-large;
+    width: 50%; 
+    align-items: center;  
+  }
+
+  .flex-container-header .logout{
     color: #eee;
     font-family: "McLaren", cursive;
     font-weight: 200;
+    width: 50%; 
+    margin-right: 0px;
+    text-align: right;
+    align-self: center;
   }
+
+  .flex-container-header .logout:hover{cursor:pointer}
   
   footer {
     position: absolute;
@@ -58,6 +76,7 @@
 
   h2{
     padding-top: 25px;
+    font-family: "McLaren", cursive;
   }
   .welcome label {
     display: block;
@@ -102,4 +121,44 @@
     border-radius: 5px;
     padding: 10px 20px;
   }
+
+  /*singleSupportCase */
+
+  .project{
+  margin: 20px auto; 
+  background: white; 
+  padding: 10px 20px; 
+  border-radius: 4px;
+  box-shadow: 1px 2px 3px rgba(0,0,0,0.05); 
+  border-left: 4px solid #e90074; 
+}
+
+h3{
+  cursor: pointer; 
+}
+
+.actions{
+  display:flex; 
+  justify-content: space-between; 
+  align-items: center; 
+}
+
+.material-icons{
+  font-size: 24px;
+  margin-left: 10px; 
+  color: #bbb; 
+  cursor:pointer; 
+}
+
+.material-icons:hover{
+  color: #777;
+}
+
+.complete{
+  border-left: 4px solid #00ce89;
+}
+
+.project.complete .tick {
+  color: #00ce89;
+}
   

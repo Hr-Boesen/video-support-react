@@ -3,14 +3,18 @@ import React, {useState} from "react";
 import LoginForm from './LoginForm'
 import SignupForm from './SignupForm'
 import { useHistory } from "react-router-dom";
+import {useDispatch}  from "react-redux";
+import { setUserLogin} from "./redux/login";
 
 
-function App(){
+
+function Welcome(){
 
   const history = useHistory();
   const [showLogin, setLogin] = useState(true)
   const [error, setError] = useState({})
-
+  //redux
+  const dispatch = useDispatch();
 
   const changeLoginSignUp =() => {
 
@@ -26,7 +30,7 @@ function App(){
     const data = response.data
 
     if(data.loggedIn === true){
-      
+      dispatch(setUserLogin(1))
        history.push("/Home");
        console.log("logged in")
     }else{
@@ -47,7 +51,14 @@ function App(){
       customer_phone: null,
       customer_email: email
     }).then((response)=>{
-   console.log(response)
+      const data = response.data
+   if(data.continueSignUpCustomer === true){
+    dispatch(setUserLogin(1))
+     history.push("/Home");
+     console.log("logged in")
+  }else{
+     setError(data)
+  }
 
   })
 
@@ -66,7 +77,7 @@ function App(){
         </div> </div>}
         {showLogin === false &&  <div>
           <h2>Sign up</h2>
-          <SignupForm onSignUpSupportNinja = {signUpSupportNinja} />
+          <SignupForm onSignUpSupportNinja = {signUpSupportNinja}/>
           <p>Already registered? <span onClick={changeLoginSignUp}>Login</span> instead.</p>
         </div>}
         </div>
@@ -74,4 +85,4 @@ function App(){
 
 }
 
-export default App
+export default Welcome
