@@ -60,7 +60,7 @@ supportCaseVideoRef.current.style.display = "none"
           <span className="material-icons" vidSrc={"http://"+props.video.video_url} onClick={startVideo}>play_circle_filled</span>
          
           <Popup trigger={<span className="material-icons" >delete</span>} position="left" closeOnDocumentClick>
-          {close => (<div className="popUpAreYouSure">Do you want to delete <span onClick={close}><button 
+          {close => (<div className="popUpAreYouSure"> <div>Are you sure to delete this support case?</div> <br></br><span onClick={close}><button 
             onClick={()=>{
     
             deleteVideo(props.video.video_id)

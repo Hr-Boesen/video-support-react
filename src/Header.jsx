@@ -3,6 +3,9 @@ import {useSelector, useDispatch}  from "react-redux";
 import { useHistory } from "react-router-dom";
 import { setUserLogin} from "./redux/login";
 import axios from "axios";
+import Settings from "./Settings";
+
+
 
 
 function Header() {
@@ -22,8 +25,9 @@ function Header() {
 
   return (
     <header className="flex-container-header">
-      <div className="logo"> SUPPORT NINJA</div>
-      {loggedIn === 1 && <div onClick={logOut} className="logout">Logout</div>}
+      <div className="logo"> SUPERB<i class="material-icons">stars</i></div>
+      {loggedIn === 1 && <div className="right-side"><button onClick={logOut}  class="button logout-btn">Log out</button>
+    <Settings/></div> }
     </header>
   );
 }

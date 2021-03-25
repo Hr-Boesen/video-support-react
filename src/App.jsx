@@ -5,6 +5,8 @@ import Welcome from './Welcome'
 import Home from './pages/Home'
 import {Route, BrowserRouter as Router, Switch, Link} from "react-router-dom";
 import SingleSupportCase from './SingleSupportCase';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Example from './Settings';
 
 /*
 
@@ -26,6 +28,7 @@ function App(){
         
         </div>
       <Switch>
+      <Route path="/example"  component= {Example} />
         <Route path="/support" Exact component= {SingleSupportCase} />  
          <Route path="/home"  component= {Home} />
          <Route path="/" Exact component= {Welcome} />  
